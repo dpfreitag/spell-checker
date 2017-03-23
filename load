@@ -1,0 +1,30 @@
+// load function for spell checker 
+// create struct for nodes
+
+// Declare variables
+int hashtable[];
+int hashvalue;
+int new_node;
+
+
+
+typedef struct node
+{
+  char word [length +1];
+  struct node* next;
+}
+node;
+
+
+// read dictionary file one word at a time and insert in link list
+while (fscan (dictionary, "%s", word) != EOF)
+{
+   node* new_node = malloc(sizeof(node));
+   if (new_node==NULL)
+   {
+      unload();
+      return false:
+   }
+   hashvalue = hash(word);
+   strcpy(new_node -> next = hashtable[hashvalue];
+}
