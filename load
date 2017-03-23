@@ -2,9 +2,9 @@
 // create struct for nodes
 
 // Declare variables
-int hashtable[];
+char hashtable[1000];
 int hashvalue;
-int new_node;
+char new_node;
 
 
 
@@ -14,7 +14,7 @@ typedef struct node
   struct node* next;
 }
 node;
-
+node* hashtable[hashvalue];
 
 // read dictionary file one word at a time and insert in link list
 while (fscan (dictionary, "%s", word) != EOF)
@@ -26,5 +26,7 @@ while (fscan (dictionary, "%s", word) != EOF)
       return false:
    }
    hashvalue = hash(word);
-   strcpy(new_node -> next = hashtable[hashvalue];
+   strcpy(new_node -> next = hashtable[hashvalue]);
+   new_node -> next = hashtable[hashvalue];
+   hashtable[hashvalue} = new_node;
 }
