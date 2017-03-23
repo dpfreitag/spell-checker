@@ -1,10 +1,8 @@
 // load function for spell checker 
-// create struct for nodes
 
 // hash function Similar to the PJW Hash function, but tweaked for 32-bit processors. 
 // Its the hash function widely used on most UNIX systems. 
 // downloaded from http://www.partow.net/programming/hashfunctions/#ELFHashFunction
-
 
 unsigned int ELFHash(char* str, unsigned int len)
 {
@@ -24,11 +22,9 @@ unsigned int ELFHash(char* str, unsigned int len)
 }
 
 // Declare variables
-char hashtable[1000];
+char hashtable[100003];
 int hashvalue;
 char new_node;
-
-
 
 typedef struct node
 {
@@ -47,7 +43,7 @@ while (fscan (dictionary, "%s", word) != EOF)
       unload();
       return false:
    }
-   hashvalue = hash(word);
+   hashvalue = ELFhash(word);
    strcpy(new_node -> next = hashtable[hashvalue]);
    new_node -> next = hashtable[hashvalue];
    hashtable[hashvalue} = new_node;
