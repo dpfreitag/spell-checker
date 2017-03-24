@@ -21,11 +21,6 @@ unsigned int ELFHash(char* str, unsigned int len)
 	return hash;
 }
 
-// Declare variables
-char hashtable[100003];
-int hashvalue;
-char new_node;
-
 typedef struct node
 {
   char word [length +1];
@@ -34,8 +29,21 @@ typedef struct node
 node;
 node* hashtable[1000];
 
+// Declare variables
+char hashtable[100003];
+int hashvalue;
+char new_node;
+
+FILE *file = fopen(dictionary,"r");
+	if(file == NULL)
+	{
+		printf ("Can't open %s file", dictionary);
+		return false;
+	}
+
+
 // read dictionary file one word at a time and insert in link list
-while (fscan (dictionary, "%s", word) != EOF)
+while (fscan (file, "%s", word) != EOF)
 {
    node* new_node = malloc(sizeof(node));
    if (new_node==NULL)
