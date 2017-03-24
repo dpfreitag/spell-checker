@@ -23,7 +23,7 @@ unsigned int ELFHash(char* str, unsigned int len)
 
 typedef struct node
 {
-  char word [length +1];
+  char word [LENGTH +1];
   struct node* next;
 }
 node;
